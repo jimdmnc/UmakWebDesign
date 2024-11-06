@@ -17,13 +17,13 @@
 }
 
 :root{
-	--bg-color: #152238;
+	--bg-color: #0f1d4e;
 }
 nav {
     width: 100%;
-    padding: 15px 20px; /* More padding for a comfortable look */
+    padding: 10px 20px; /* More padding for a comfortable look */
     display: flex;
-    background-color: var(--bg-color); /* Assuming you are using a CSS variable for background */
+    background-color: #0A1433  ; /* Assuming you are using a CSS variable for background */
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -36,11 +36,11 @@ nav {
 
 nav img {
     width: 4em;
-    margin-left: 15px;
+    margin-left: 100px;
 }
 
 nav ul {
-    margin-right: 20px;
+    margin-right: 100px;
     display: flex;
     flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
 }
@@ -132,6 +132,7 @@ nav ul li.active::after {
     margin-right: 20px;
     animation: modernAnimation 3s;
 }
+
 .title{
     animation: titleAnimation 2.5s forwards; 
     animation-delay: 2s; 
@@ -142,18 +143,20 @@ nav ul li.active::after {
 }
 
 .home .title1 {
-    font-size: 2.6em;
+    font-size: 2.8em;
+    font-weight: bolder;
 
 }
 .home .title2 {
-    font-size: 3.5em;
+    font-size: 4em;
     color: orange;
     font-weight: bolder;
 }
 .home .title3 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 100;
     text-transform: capitalize;
+    font-family:cursive;
 }
 
 
@@ -221,6 +224,10 @@ nav ul li.active::after {
 }
 .robot img{
     width:250px;
+    transition: .5s ease;
+}
+.robot img:hover{
+    transform:scale(1.5);
 }
 /* ===================================KEYFRAMES============================================ */
 @keyframes slide {
@@ -265,8 +272,8 @@ nav ul li.active::after {
 
 .about{
 	width: 100%;
-	height: 75vh;
-    /* overflow: hidden; */
+	height: 100vh;
+   
 	
 	
 }
@@ -439,17 +446,28 @@ span{
     font-size: 16px;
 }
 
+@keyframes appear{
+    from{
+        opacity: 0;
+        transform:scale(.5)
+    }to{
+        opacity: 1;
+        transform: scale(1);
+}
 
-
+}
 /* Footer Styles */
 .footer-logo img{
     width: 100px;
 }
 footer {
-    background-color: #333;
+    background-color: #0A1433;
     color: white;
     padding: 20px 70px;
     text-align: center;
+    animation: appear normal forwards;
+	animation-timeline: view();
+    animation-range: entry 0% cover 30% ;
 }
 
 .footer-container {
