@@ -4,6 +4,7 @@
     font-family: sans-serif;
     text-decoration: none;
 	box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 ::-webkit-scrollbar{
     width: 5px;
@@ -186,7 +187,21 @@ nav ul li.active::after {
     color: orange;
  
 }
-
+.about-btn{
+    width: 100px;
+    padding: 6px;
+    /* border-radius: 5px; */
+    margin: 20px 10px;
+    font-size: 18px;
+    border: 2px solid orange;
+    background: orange;
+    transition: 0.5s ease-out;
+    color: white;
+}
+.about-btn:hover{
+    background: transparent;
+    color: orange;
+}
 .primary-btn:hover {
     background: transparent;
     color: orange;
@@ -250,11 +265,10 @@ nav ul li.active::after {
 
 .about{
 	width: 100%;
-	height: 100vh;
-	overflow: hidden;
-	animation: appear linear;
-	animation-timeline: view();
-	animation-range: entry 0% cover 50%;
+	height: 75vh;
+    /* overflow: hidden; */
+	
+	
 }
 .about-container{
 	display: flex;
@@ -264,18 +278,32 @@ nav ul li.active::after {
 	top: 50%;
 	transform: translateY(-50%);
 }
-@keyframes appear{
-   from {
+@keyframes appearRound{
+    from {
         opacity: 0;
-        transform: scale(0);
+        transform: scale(0.5) rotate(180deg);
     }
-    to {
+    to{
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) rotate(360deg);
+    }
+}
+@keyframes appearContent{
+    from{
+        opacity: 0;
+        transform: translateX(-300px);
+    }to{
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 .about-container img{
 	width: 20em;
+    opacity: 0;
+    animation: appearRound normal forwards;
+	animation-timeline: view();
+    animation-range: entry 0% cover 30% ;
+
 	
 }
 .about-container .right{
@@ -283,6 +311,9 @@ nav ul li.active::after {
 	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 	padding: 30px;
 	border-radius: 10px;
+    animation: appearContent backwards ease-in-out ;
+	animation-timeline: view();
+    animation-range: entry 0% cover 30% ;
 
 }
 .about-container .right h1{
@@ -294,14 +325,14 @@ nav ul li.active::after {
 	font-size: 18px;
 	margin-bottom: 15px;
 }
-.about-container button{
+/* .about-container button{
 	width: 90px;
 	border-radius: 25px;
 	padding: 15px 0;
 	border: 2px solid orange;
 	background: orange;
 	font-size: 16px;
-}
+} */
 span{
 	color: orange;
 	font-weight: bold;
