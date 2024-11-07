@@ -36,11 +36,11 @@ nav {
 
 nav img {
     width: 4em;
-    margin-left: 100px;
+    margin-left:75px;
 }
 
 nav ul {
-    margin-right: 100px;
+    margin-right: 75px;
     display: flex;
     flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
 }
@@ -167,6 +167,16 @@ nav ul li.active::after {
     opacity: 0;
 
 }
+/* .contact-btn{
+    width: 120px;
+    padding: 10px;
+    margin-right: 100px;
+    border-radius: 25px;
+    font-size: 18px;
+    border: 2px solid orange;
+    background: #ff9000;
+    transition: 0.5s ease-out;
+} */
 .primary-btn {
     width: 200px;
     padding: 10px;
